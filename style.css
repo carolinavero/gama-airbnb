@@ -1,39 +1,102 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap');
 
+:root {
+    --primary-color: #E91E63;
+    --neutral-color: #eee;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto Condensed', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: auto;
 }
 body {
     padding: 15px;
 }
 h1 {
     text-align: center;
+    color: var(--primary-color);
+}
+.total-rooms {
+    margin-bottom: 2rem;
+    text-align: center;
 }
 .room {
     display: flex;
     flex-direction: column;
     flex: 1;
-    background-color: #ddd;
+    background-color: #f9f9f9;
     padding: 15px;
     margin-bottom: 15px;
     align-items: flex-start;
     justify-content: center;
     border-radius: 5px;
+    box-shadow: 4px 10px 10px var(--neutral-color);
 }
+.room__image-block {
+    margin-bottom: 1rem;
+    max-height: 200px;
+    overflow: hidden;
+}
+
 .room__image {
     max-width: 100%;
-    margin-bottom: 1rem;
 }
+
 .room__name {
     font-size: 1em;
+    margin-bottom: 1rem;
+}
+.room__type{
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    padding: 3px 5px;
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 400;
 }
 
+.room__price {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 15px;
+    color: #999;
+}
 @media(min-width: 600px) {
-
-    .room {
-        width: 30%;
+    body {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
     }
+    header {
+        padding-top: 3rem;
+    }
+    .container {
+        max-width: 1200px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+    .rooms-block {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .room { 
+        flex-direction: column;
+        flex: 1 1 32%;
+        margin: 5px;
+        justify-content: flex-start;
+    }
+
 }

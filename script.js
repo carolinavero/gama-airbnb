@@ -10,10 +10,10 @@ fetch(url)
             (html, room, index) => html + 
             `
             <div class="room">
-                <img class="room__image" src="${room.photo}" />
+                <div class="room__image-block"><img class="room__image" src="${room.photo}" /></div>
                 <div class="room__type"> ${room.property_type} </div>
                 <div class="room__name"> ${room.name} </div>
-                <div class="room__price"> ${room.price} </div>
+                <div class="room__price"> R$${room.price},00 </div>
             </div>
             `, '' 
             
