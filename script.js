@@ -2,6 +2,10 @@ const listRooms = document.querySelector('.rooms-block');
 const url = 'https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72';
 var countRooms = 0;
 
+const paginationEl = document.querySelector('.pagination');
+let currentPage = 1;
+let rows = 9;
+
 fetch(url)
     .then(resp => resp.json())
     .then(rooms => {

@@ -16,9 +16,16 @@
 body {
     padding: 15px;
 }
+header {
+    padding-top: 2rem;
+}
+a {
+    transition: all .3s ease;
+}
 h1 {
     text-align: center;
     color: var(--primary-color);
+    font-size: 3rem;
 }
 .total-rooms {
     margin-bottom: 2rem;
@@ -36,21 +43,29 @@ h1 {
     justify-content: center;
     border-radius: 5px;
     box-shadow: 4px 10px 10px var(--neutral-color);
+    
 }
 
 .room__image-block {
     margin-bottom: 1rem;
     max-height: 200px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .room__image {
     max-width: 100%;
+       opacity: 1;
+}
+.room__image:hover {
+    opacity: .8;
 }
 
 .room__name {
     font-size: 1em;
     margin-bottom: 1rem;
+    cursor: pointer;
+    color: #333;
 }
 .room__type{
     background-color: var(--primary-color);
@@ -68,11 +83,50 @@ h1 {
     font-weight: bold;
     font-size: 1.2rem;
 }
+
+.pagination {
+    text-align: center;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pagination ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pagination ul li {
+    border-radius: 5px;
+    margin: 5px;
+    display: flex;
+    background-color: var(--neutral-color);
+}   
+.pagination a {
+    color: #333;
+    text-decoration: none;
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+.pagination a:hover {
+    opacity: .8;
+}
+.pagination a.active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
 footer {
     text-align: center;
     margin-top: 2rem;
     padding: 15px;
     color: #999;
+}
+footer a {
+    color: #999;
+    text-decoration: none;
 }
 @media(min-width: 600px) {
     body {
@@ -83,6 +137,9 @@ footer {
     }
     header {
         padding-top: 3rem;
+    }
+    h1 {
+        font-size: 4rem;
     }
     .container {
         max-width: 1200px;
@@ -96,8 +153,8 @@ footer {
     }
     .room { 
         flex-direction: column;
-        flex: 1 1 32%;
-        margin: 5px;
+        flex: 1 1 30%;
+        margin: 10px;
         justify-content: flex-start;
     }
 
