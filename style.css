@@ -24,6 +24,7 @@ h1 {
     margin-bottom: 2rem;
     text-align: center;
 }
+
 .room {
     display: flex;
     flex-direction: column;
@@ -36,6 +37,7 @@ h1 {
     border-radius: 5px;
     box-shadow: 4px 10px 10px var(--neutral-color);
 }
+
 .room__image-block {
     margin-bottom: 1rem;
     max-height: 200px;
