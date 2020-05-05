@@ -30,6 +30,10 @@ h1 {
 .total-rooms {
     margin-bottom: 2rem;
     text-align: center;
+    color: #333;
+}
+.total-rooms span {
+    font-weight: bold;
 }
 
 .room {
@@ -43,16 +47,13 @@ h1 {
     justify-content: center;
     border-radius: 5px;
     box-shadow: 4px 10px 10px var(--neutral-color);
-    
 }
-
 .room__image-block {
     margin-bottom: 1rem;
     max-height: 200px;
     overflow: hidden;
     cursor: pointer;
 }
-
 .room__image {
     max-width: 100%;
        opacity: 1;
@@ -60,7 +61,6 @@ h1 {
 .room__image:hover {
     opacity: .8;
 }
-
 .room__name {
     font-size: 1em;
     margin-bottom: 1rem;
@@ -77,7 +77,6 @@ h1 {
     text-transform: uppercase;
     font-weight: 400;
 }
-
 .room__price {
     color: var(--primary-color);
     font-weight: bold;

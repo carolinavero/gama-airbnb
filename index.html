@@ -18,15 +18,17 @@
 
         <main>
             <section>
-                <p class="total-rooms">Total de quartos: <span>10</span></p>
+                <p class="total-rooms">Total de Quartos: 
+                    <span class="total-rooms__value"></span>
+                </p>
             </section>
         
             <section class="rooms-block"></section>
             <section class="pagination">
                 <ul>
-                    <li><a href="#" class="active">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
+                    <li><a href="#"  id="page-1" onclick="renderRooms(1)">1</a></li>
+                    <li><a href="#" id="page-2" onclick="renderRooms(2)">2</a></li>
+                    <li><a href="#"  id="page-3" onclick="renderRooms(3)">3</a></li>
                 </ul>
             </section>
 

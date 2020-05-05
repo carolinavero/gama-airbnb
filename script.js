@@ -1,17 +1,33 @@
-const listRooms = document.querySelector('.rooms-block');
 const url = 'https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72';
-var countRooms = 0;
+const listRooms = document.querySelector('.rooms-block');
+let totalValueEl = document.querySelector('.total-rooms__value');
+let countRooms = 0;
+let allRooms = [];
 
 const paginationEl = document.querySelector('.pagination');
+let itemsForPage = 9;
 let currentPage = 1;
-let rows = 9;
 
-fetch(url)
-    .then(resp => resp.json())
-    .then(rooms => {
-        const items = rooms.reduce(
+function selectCurrentPage(page) {
+    let allLinks = document.querySelectorAll('.pagination a');
+    let arrayAllLinks = Array.from(allLinks);
 
-            (html, room, index) => html + 
+    arrayAllLinks.map(item => {
+        item.classList.remove('active');
+    })
+
+    let link = document.getElementById(`page-${page}`)
+    link.classList.add('active');
+}
+
+function renderRooms(page) {
+
+    selectCurrentPage(page);
+
+    const rooms2 = allRooms.slice((page - 1) * itemsForPage, itemsForPage * page);
+    const items = rooms2.reduce(
+
+        (html, room) => html +
             `
             <div class="room">
                 <div class="room__image-block"><img class="room__image" src="${room.photo}" /></div>
@@ -19,9 +35,23 @@ fetch(url)
                 <div class="room__name"> ${room.name} </div>
                 <div class="room__price"> R$${room.price},00 </div>
             </div>
-            `, '' 
-            
-            )
+            `, ''
+    )
 
-            listRooms.insertAdjacentHTML('beforeend', items);
+    listRooms.innerHTML = '';
+    listRooms.insertAdjacentHTML('beforeend', items);  
+}
+
+fetch(url)
+    .then(resp => resp.json())
+    .then(rooms => {
+        
+        countRooms = rooms.length;
+        totalValueEl.textContent = countRooms; 
+
+        var numberOfPages = Math.round(countRooms / itemsForPage);
+        allRooms = rooms;
+
+        renderRooms(1);
+ 
     })
