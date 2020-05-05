@@ -18,6 +18,28 @@
 
         <main>
             <section>
+                <div class="filter">
+                    <form>
+                        <div class="form-control">
+                            <label for="checkin">Localização</label>
+                            <input id="checkin" type="text" placeholder="Para onde você vai?">
+                        </div>
+                        <div class="form-control">
+                            <label for="checkin">Checkin</label>
+                            <input id="checkin" type="date" min="2020-05-06">
+                        </div>
+                        <div class="form-control">
+                            <label for="checkin">Checkout</label>
+                            <input id="checkin" type="date">
+                        </div>
+                        
+                        
+                        <button class="btn btn-success">Buscar</button>
+                    </form>
+                </div>
+            </section>
+            <section>
+
                 <p class="total-rooms">Total de Quartos: 
                     <span class="total-rooms__value"></span>
                 </p>
@@ -37,7 +59,8 @@
     </div>
     
     <footer>
-       2020 - Desenvolvido por <a href="https://github.com/carolinavero" target="_blank">Carolina</a>
+       <div>2020 - Desenvolvido por <a href="https://github.com/carolinavero" target="_blank">Carolina</a></div>
+       <div>redes sociais</div>
     </footer>
 
     <script src="script.js"></script>
