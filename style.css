@@ -19,17 +19,42 @@ body {
     padding: 15px;
     color: #333;
 }
+.loading {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loading-content {
+    font-size: 2rem;
+}
 header {
-    padding-top: 2rem;
+    padding: 2rem 0;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 a {
     transition: all .3s ease;
 }
-h1 {
+a:hover {
+    opacity: .8;
+}
+h1 a {
     text-align: center;
     color: var(--primary-color);
     font-size: 3rem;
     margin-bottom: 2rem;
+    text-decoration: none;
 }
 .btn {
     padding: 10px 15px;
@@ -43,8 +68,7 @@ h1 {
 }
 .filter {
     background-color: #f9f9f9;
-    padding: 15px;
-   
+    padding: 30px;
     box-shadow: var(--box-shadow);
 }
 .filter form {
@@ -55,12 +79,14 @@ h1 {
 .filter .form-control {
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 .filter .form-control input {
     padding: 10px 15px;
     font-size: 1rem;
     border: none;
     background-color: #fff;
+    
 }
 
 .filter .form-control label {
@@ -72,6 +98,13 @@ input[type="date"]::-webkit-inner-spin-button {
     display: none;
     -webkit-appearance: none;
 }
+
+#map {
+    width: 100%;
+    height: 400px;
+    background-color: grey;
+}
+
 
 .total-rooms {
     margin: 3rem 0 1rem;
@@ -101,29 +134,35 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 .room__image {
     max-width: 100%;
-       opacity: 1;
+    opacity: 1;
 }
-.room__image:hover {
+.room .room__image:hover {
     opacity: .8;
 }
 .room__name {
-    font-size: 1em;
     margin-bottom: 1rem;
+}
+.room__name a{
+    font-size: 1em;
     cursor: pointer;
     color: #333;
+    text-decoration: none;
+}
+.room__name a:hover {
+    opacity: .8;
 }
 .room__type{
     background-color: var(--primary-color);
     border-radius: 5px;
-    padding: 3px 5px;
+        padding: 5px 10px;
     margin-bottom: 5px;
     color: #fff;
-    font-size: 12px;
+    font-size: 11px;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 800;
 }
 .room__price {
-    color: var(--primary-color);
+    color: #333;
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -176,6 +215,29 @@ footer a {
     color: #999;
     text-decoration: none;
 }
+
+.room-details {
+
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.room-details h2 {
+    font-size: 2.5rem;
+}
+
+.room-details__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.room-details img {
+    max-width: 50vh;
+}
+.room-details .map {
+    background-color: blue;
+}
+
 @media(min-width: 600px) {
     body {
         align-items: center;
@@ -187,7 +249,7 @@ footer a {
     header {
         padding-top: 3rem;
     }
-    h1 {
+    h1 a {
         font-size: 4rem;
     }
     .container {
@@ -195,6 +257,7 @@ footer a {
         align-items: center;
         justify-content: center;
         display: flex;
+        width: 100%;
     }
     .rooms-block {
         display: flex;

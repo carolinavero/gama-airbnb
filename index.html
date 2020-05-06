@@ -10,8 +10,12 @@
 </head>
 <body>
 
+    <div class="loading">
+        <div class="loading-content">Carregando...</div>
+    </div>
+
     <header>
-        <h1>Airbnb</h1>
+        <h1><a href="/">Airbnb</a></h1>
     </header>
 
     <div class="container">
@@ -21,20 +25,19 @@
                 <div class="filter">
                     <form>
                         <div class="form-control">
-                            <label for="checkin">Localização</label>
-                            <input id="checkin" type="text" placeholder="Para onde você vai?">
+                            <label for="place">Localização</label>
+                            <input id="place" type="text" placeholder="Para onde você vai?">
                         </div>
                         <div class="form-control">
                             <label for="checkin">Checkin</label>
                             <input id="checkin" type="date" min="2020-05-06">
                         </div>
                         <div class="form-control">
-                            <label for="checkin">Checkout</label>
-                            <input id="checkin" type="date">
+                            <label for="checkout">Checkout</label>
+                            <input id="checkout" type="date">
                         </div>
-                        
-                        
-                        <button class="btn btn-success">Buscar</button>
+  
+                        <button id="search" class="btn btn-success">Buscar</button>
                     </form>
                 </div>
             </section>
@@ -48,12 +51,13 @@
             <section class="rooms-block"></section>
             <section class="pagination">
                 <ul>
-                    <li><a href="#"  id="page-1" onclick="renderRooms(1)">1</a></li>
+                    <li><a href="#" id="page-1" onclick="renderRooms(1)">1</a></li>
                     <li><a href="#" id="page-2" onclick="renderRooms(2)">2</a></li>
-                    <li><a href="#"  id="page-3" onclick="renderRooms(3)">3</a></li>
+                    <li><a href="#" id="page-3" onclick="renderRooms(3)">3</a></li>
                 </ul>
             </section>
 
+           
         </main>
     
     </div>
@@ -64,5 +68,6 @@
     </footer>
 
     <script src="script.js"></script>
+  
 </body>
 </html>
