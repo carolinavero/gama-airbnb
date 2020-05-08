@@ -10,9 +10,10 @@ Criar uma página similar ao site **Airbnb** utilizando CSS, HTML e JavaScript.
 - Cálculo do valor total por estadia ao utilizar filtro.
 
 ## Habilidades aprendidas e/ou treinadas
-- Operações com arrays (map, reduce);
+- Operações com arrays (map, filter, reduce);
 - Manipulação da API do Google Maps;
 - Consumo da API utilizando fetch;
+- Criação de Paginação;
 - Criação de conteúdo no DOM via JavaScript.
 
 ## Demo
