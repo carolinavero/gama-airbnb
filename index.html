@@ -61,10 +61,10 @@
             <section class="header-results">
 
                 <div class="total-rooms">
-                    Mais de <span class="total-rooms__value"></span> acomodações em Montes Claros, Belo Horizonte e São Paulo.
+                    Mais de <span class="total-rooms__value"></span> acomodações em <strong>Montes Claros, Belo Horizonte e São Paulo</strong>.
                 </div>
                 <div>
-                    <a href="#" class="show-map" onclick="showMap()">Exibir mapa</a>
+                    <a href="javascript:void(0)" class="show-map" onclick="showMap()">Exibir mapa</a>
                 </div>
             </section>
 
@@ -78,9 +78,9 @@
             
             <section class="pagination">
                 <ul>
-                    <li><a href="#" id="page-1" onclick="renderRooms(1)">1</a></li>
-                    <li><a href="#" id="page-2" onclick="renderRooms(2)">2</a></li>
-                    <li><a href="#" id="page-3" onclick="renderRooms(3)">3</a></li>
+                    <li><a href="#" id="page-1" onclick="selectCurrentPage(1)">1</a></li>
+                    <li><a href="#" id="page-2" onclick="selectCurrentPage(2)">2</a></li>
+                    <li><a href="#" id="page-3" onclick="selectCurrentPage(3)">3</a></li>
                 </ul>
             </section>
 
@@ -90,7 +90,7 @@
     </div>
     
     <footer>
-       <div>© 2020 - Desenvolvido por <a href="https://github.com/carolinavero" target="_blank">Carolina Vero</a></div>
+       <div class="copyright">© 2020 - Desenvolvido por <a href="https://github.com/carolinavero" target="_blank">Carolina Vero</a></div>
        <div>
             <a href="https://github.com/carolinavero" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -109,8 +109,6 @@
 
     <script src="script.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzQP-A8wu0zs7iLPH5XOyLyyTLPtO1FpY">
-
-    //&callback=initMap
 
     </script>
   

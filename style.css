@@ -5,6 +5,8 @@
     --neutral-color: #eee;
     --box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
     --gradient-color: linear-gradient(to right, #92174D 9.38%, #E41D5C 88.54%) !important;
+    linear-gradient(to right, #92174D 9.38%, #E41D5C 88.54%) !important;
+    linear-gradient(to right, #92174D 9.38%, #E41D5C 88.54%) !important;
 }
 
 * {
@@ -36,7 +38,10 @@ body {
     font-size: 2rem;
 }
 header {
-    padding: 2rem 0;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 main {
     display: flex;
@@ -53,7 +58,6 @@ header a {
     text-align: center;
     color: var(--primary-color);
     font-size: 2rem;
-    margin-bottom: 2rem;
     text-decoration: none;
 }
 .btn {
@@ -61,6 +65,7 @@ header a {
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
+    width: 100%;
 }
 button:focus {
     outline: none;
@@ -68,21 +73,20 @@ button:focus {
 .btn-success {
     background-color: var(--primary-color);
     color: #fff;
-   
 }
 .filter {
     background-color: #f9f9f9;
-    padding: 30px;
+    padding: 20px;
     box-shadow: var(--box-shadow);
 }
 .filter form {
     display: block;
-    
 }
 .filter .form-control {
     display: flex;
     flex-direction: column;
     flex: 1;
+    margin-bottom: .5rem;
 }
 .filter .form-control input {
     padding: 10px 15px;
@@ -145,6 +149,7 @@ input[type="date"]:valid::before { display: none }
     color: #333;
     flex-wrap: wrap;
     font-size: .8rem;
+    margin-bottom: 2rem;
 }
 .total-rooms span {
     font-weight: bold;
@@ -165,8 +170,6 @@ input[type="date"]:valid::before { display: none }
 }
 .room__image-block {
     margin-bottom: 1rem;
-    
-    max-height: 150px;
     overflow: hidden;
     cursor: pointer;
     border-radius: 10px;
@@ -212,9 +215,7 @@ input[type="date"]:valid::before { display: none }
 .room__price__total {
     font-size: .8rem;
     text-decoration: underline;
-    /* display: none; */
 }
-
 .pagination {
     text-align: center;
     margin-top: 2rem;
@@ -252,17 +253,23 @@ input[type="date"]:valid::before { display: none }
 
 footer {
     text-align: left;
-    margin: 2rem 0;
-    padding: 30px;
+    margin: 2rem 0 1rem 0;
+    padding: 15px;
     color: #999;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     font-size: .9rem;
 }
 footer a {
     color: #999;
     text-decoration: none;
+}
+footer .copyright {
+    display: block;
+    margin-bottom: 2rem;
 }
 .room-details {
     display: flex;
@@ -317,20 +324,26 @@ footer a {
     .header-results {
         flex-direction: row;
     }
-
     .rooms-block {
         display: flex;
         flex-wrap: wrap;
         flex: 1;
+    }
+    .room__image-block {
+        max-height: 150px;
     }
     .room { 
         flex-direction: column;
         flex: 1 1 23%;
         margin: 10px;
         justify-content: flex-start;
-        /* max-width: 245px; */
     }
-
+    .total-rooms {
+        margin-bottom: 0;
+    }
+    .filter {
+        padding: 30px;
+    }
     .filter form {
         display: flex;
         flex-direction: row;
@@ -349,6 +362,12 @@ footer a {
     }
     footer {
         max-width: 1200px;
+        padding: 30px;
+        display: flex;
+        flex-direction: row;
+    }
+    footer .copyright {
+        margin-bottom: 0;
     }
 
 }

@@ -171,11 +171,6 @@ function calculateDays(e) {
 
     }
 
-
-
-
-
-    // calcular total pra cada room
 }
 
 searchBtn.addEventListener('click', calculateDays);
@@ -209,10 +204,11 @@ function renderRooms(rooms2, totalPriceValue = 0) {
         console.log("No room to render Map");
     } else {
         initMap(rooms2);
+        
     }
 
     const items = rooms2.reduce(
-
+        
         (html, room, index) => { 
             
             var total = '';
@@ -221,7 +217,7 @@ function renderRooms(rooms2, totalPriceValue = 0) {
                 total = `<div class="room__price__total"> Total de R${room.price * totalPriceValue},00 </div> `;
             }
 
-            html +
+            return  html +
                 `
                 <div class="room">
                     <div class="room__image-block">
@@ -235,12 +231,12 @@ function renderRooms(rooms2, totalPriceValue = 0) {
                         ${room.name} 
                         </a>
                     </div>
-                    <div class="room__price"> R$${room.price},00 <span>/noite<span> </div>
+                    <div class="room__price"> R$ ${room.price},00 <span>/noite<span> </div>
                     ${total}
                 
                 </div>
-                `, ''
-        })
+                `
+        }, '');
     
     listRooms.innerHTML = '';
     listRooms.insertAdjacentHTML('beforeend', items);  
