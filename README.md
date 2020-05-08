@@ -20,3 +20,5 @@ Criar uma página similar ao site **Airbnb** utilizando CSS, HTML e JavaScript.
 Nesta versão, a busca está limitada apenas para as cidades: Montes Claros, Belo Horizonte e São Paulo.
 
 [Link para a Demo](https://quartos-airbnb.netlify.app)
+
+![Demo Preview](demo-print.png)
