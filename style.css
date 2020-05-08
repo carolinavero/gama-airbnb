@@ -346,7 +346,6 @@ footer .copyright {
         margin-bottom: 0;
     }
     
-
     .showing {
         flex: 1;
     }
@@ -373,7 +372,7 @@ footer .copyright {
 
 @media(min-width: 1024px) {
     .filter {
-        padding: 30px;
+        padding: 25px;
     }
     .filter form {
         display: flex;
@@ -381,6 +380,14 @@ footer .copyright {
         flex: 1;
         align-items: center;
     }
+    .filter .form-control {
+        margin-bottom: 0;
+    }
+    .filter .form-control input {
+        padding: 10px;
+        font-size: .8rem;
+    }
+
     .show-map {
         display: flex;
     }
