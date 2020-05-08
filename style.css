@@ -4,9 +4,6 @@
     --primary-color: #FF385C;
     --neutral-color: #eee;
     --box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
-    --gradient-color: linear-gradient(to right, #92174D 9.38%, #E41D5C 88.54%) !important;
-    linear-gradient(to right, #92174D 9.38%, #E41D5C 88.54%) !important;
-    linear-gradient(to right, #92174D 9.38%, #E41D5C 88.54%) !important;
 }
 
 * {
@@ -67,12 +64,18 @@ header a {
     cursor: pointer;
     width: 100%;
 }
+button {
+    border: none;
+}
 button:focus {
     outline: none;
 }
 .btn-success {
+   
     background-color: var(--primary-color);
     color: #fff;
+    font-weight: 100;
+    font-size: .9rem;
 }
 .filter {
     background-color: #f9f9f9;
@@ -129,7 +132,7 @@ input[type="date"]:valid::before { display: none }
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 3rem 0 1rem;
+    margin: 3rem 0 2rem 0;
 }
 .header-results a {
     color: #333;
@@ -289,6 +292,7 @@ footer .copyright {
 }
 .show-map {
     padding: 15px;
+    display: none;
 
 }
 .show-map:hover {
@@ -305,7 +309,7 @@ footer .copyright {
         padding: 0;
     }
     header {
-        padding-top: 3rem;
+        padding-top: 2rem;
     }
     h1 a {
         font-size: 3rem;
@@ -341,18 +345,13 @@ footer .copyright {
     .total-rooms {
         margin-bottom: 0;
     }
-    .filter {
-        padding: 30px;
-    }
-    .filter form {
-        display: flex;
-        flex-direction: row;
-        flex: 1;
-        align-items: flex-end;
-    }
+    
 
     .showing {
         flex: 1;
+    }
+    .map .showing {
+        display: flex;
     }
     .rooms-with-map .room {
         flex: 1 1 30%;
@@ -370,4 +369,19 @@ footer .copyright {
         margin-bottom: 0;
     }
 
+}
+
+@media(min-width: 1024px) {
+    .filter {
+        padding: 30px;
+    }
+    .filter form {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        align-items: center;
+    }
+    .show-map {
+        display: flex;
+    }
 }

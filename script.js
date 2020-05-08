@@ -103,9 +103,8 @@ function setMarkers(map, rooms2) {
 
         var contentString =
             '<div id="content">' +
-            '<h1 id="firstHeading" class="firstHeading">R$' + room.price + '</h1>' +
-            '<div id="bodyContent">' + room.name +
-            '</div>' +
+            '<h1>R$' + room.price + ' / noite</h1>' +
+            '<div>' + room.name + '</div>' +
             '</div>'; 
 
         infowindow.setContent(contentString);
@@ -127,28 +126,23 @@ function setMarkers(map, rooms2) {
             infowindow.open(map, this) 
         });
     }    
-        
 }
-
 
 var totalPrice = document.querySelector('.room__total__price');
 
-
 // Filter by Place 
 function filterByPlace(localValue, totalPriceValue) {
-    console.log("dentro do filtro", localValue);
-    console.log(allRooms)
 
+    paginationEl.style.display = "none";
     var filtered = allRooms.filter(room => room.place == localValue);
     totalValueEl = filtered.length;
-    console.log("filtered", filtered, totalValueEl);
     renderRooms(filtered, totalPriceValue);
 
 }
 
 function calculateDays(e) {
     e.preventDefault();
-    console.log('calcular')
+
     var localValue = localEl.value;
 
     if (localValue == 0 || checkoutEl.value == 0 || checkoutEl.value == 0 || guests.value == 0) {
@@ -175,7 +169,6 @@ function calculateDays(e) {
 
 searchBtn.addEventListener('click', calculateDays);
 
-
 //Pagination
 function selectCurrentPage(page) {
     let allLinks = document.querySelectorAll('.pagination a');
@@ -183,7 +176,7 @@ function selectCurrentPage(page) {
 
     arrayAllLinks.map(item => {
         item.classList.remove('active');
-    })
+    });
 
     let link = document.getElementById(`page-${page}`)
     link.classList.add('active');
@@ -204,7 +197,6 @@ function renderRooms(rooms2, totalPriceValue = 0) {
         console.log("No room to render Map");
     } else {
         initMap(rooms2);
-        
     }
 
     const items = rooms2.reduce(
@@ -214,7 +206,7 @@ function renderRooms(rooms2, totalPriceValue = 0) {
             var total = '';
 
             if(totalPriceValue > 0) {
-                total = `<div class="room__price__total"> Total de R${room.price * totalPriceValue},00 </div> `;
+                total = `<div class="room__price__total"> Total de R$ ${room.price * totalPriceValue},00 </div> `;
             }
 
             return  html +
