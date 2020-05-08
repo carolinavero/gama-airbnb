@@ -165,7 +165,7 @@ input[type="date"]:valid::before { display: none }
 }
 .room__image-block {
     margin-bottom: 1rem;
-    background-color: var(--primary-color);
+    
     max-height: 150px;
     overflow: hidden;
     cursor: pointer;
@@ -212,7 +212,7 @@ input[type="date"]:valid::before { display: none }
 .room__price__total {
     font-size: .8rem;
     text-decoration: underline;
-    display: none;
+    /* display: none; */
 }
 
 .pagination {
