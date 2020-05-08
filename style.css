@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
 
 :root {
-    --primary-color: #E91E63;
+    --primary-color: #FF385C;
     --neutral-color: #eee;
-   /*  --box-shadow: 4px 10px 10px var(--neutral-color); */
     --box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+    --gradient-color: linear-gradient(to right, #92174D 9.38%, #E41D5C 88.54%) !important;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: auto;
 }
@@ -49,10 +49,10 @@ a {
 a:hover {
     opacity: .8;
 }
-h1 a {
+header a {
     text-align: center;
     color: var(--primary-color);
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
     text-decoration: none;
 }
@@ -62,9 +62,13 @@ h1 a {
     font-size: 1rem;
     cursor: pointer;
 }
+button:focus {
+    outline: none;
+}
 .btn-success {
     background-color: var(--primary-color);
     color: #fff;
+   
 }
 .filter {
     background-color: #f9f9f9;
@@ -72,9 +76,8 @@ h1 a {
     box-shadow: var(--box-shadow);
 }
 .filter form {
-    display: flex;
-     align-items: center;
-    justify-content: space-between;
+    display: block;
+    
 }
 .filter .form-control {
     display: flex;
@@ -83,54 +86,90 @@ h1 a {
 }
 .filter .form-control input {
     padding: 10px 15px;
-    font-size: 1rem;
-    border: none;
+    border-radius: 10px;
+    font-size: .85rem;
+    border: 2px solid transparent;
     background-color: #fff;
-    
 }
-
+.filter .form-control input:hover {
+    border-color: #ddd;
+}
+.filter .form-control input:focus {
+    border-color: #333;
+    outline: none;
+}
 .filter .form-control label {
     text-transform: uppercase;
     font-weight: bold;
-    font-size: .9rem;
+    font-size: .8rem;
 }
-input[type="date"]::-webkit-inner-spin-button {
+input[type="date"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
     display: none;
     -webkit-appearance: none;
 }
 
-#map {
-    width: 100%;
-    height: 400px;
-    background-color: grey;
+input[type="date"]:not(.has-value):before{
+  color: #999;
+  content: attr(placeholder);
 }
 
+input[type=date]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before { display: none }
 
-.total-rooms {
+.header-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     margin: 3rem 0 1rem;
+}
+.header-results a {
     color: #333;
+    text-decoration: none;
+}
+.map {
+    width: 40%;
+    height: auto;
+    background-color: #ccc;
+    display: none;
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+.total-rooms {
+    color: #333;
+    flex-wrap: wrap;
+    font-size: .8rem;
 }
 .total-rooms span {
     font-weight: bold;
 }
-
+.showing {
+    display: flex;
+}
 .room {
     display: flex;
     flex-direction: column;
     flex: 1;
-    background-color: #f9f9f9;
-    padding: 15px;
+    background-color: #fff;
+    padding: 0;
     margin-bottom: 15px;
     align-items: flex-start;
     justify-content: center;
     border-radius: 5px;
-    box-shadow: var(--box-shadow);
 }
 .room__image-block {
     margin-bottom: 1rem;
-    max-height: 200px;
+    background-color: var(--primary-color);
+    max-height: 150px;
     overflow: hidden;
     cursor: pointer;
+    border-radius: 10px;
 }
 .room__image {
     max-width: 100%;
@@ -140,7 +179,7 @@ input[type="date"]::-webkit-inner-spin-button {
     opacity: .8;
 }
 .room__name {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 }
 .room__name a{
     font-size: 1em;
@@ -154,7 +193,7 @@ input[type="date"]::-webkit-inner-spin-button {
 .room__type{
     background-color: var(--primary-color);
     border-radius: 5px;
-        padding: 5px 10px;
+    padding: 5px 10px;
     margin-bottom: 5px;
     color: #fff;
     font-size: 11px;
@@ -164,7 +203,16 @@ input[type="date"]::-webkit-inner-spin-button {
 .room__price {
     color: #333;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+}
+.room__price span {
+    font-weight: 100;
+    font-size: .9rem;
+}
+.room__price__total {
+    font-size: .8rem;
+    text-decoration: underline;
+    display: none;
 }
 
 .pagination {
@@ -181,7 +229,7 @@ input[type="date"]::-webkit-inner-spin-button {
     justify-content: center;
 }
 .pagination ul li {
-    border-radius: 5px;
+    border-radius: 50px;
     margin: 5px;
     display: flex;
     background-color: var(--neutral-color);
@@ -189,15 +237,16 @@ input[type="date"]::-webkit-inner-spin-button {
 .pagination a {
     color: #333;
     text-decoration: none;
-    width: 100%;
-    padding: 10px 15px;
-    border-radius: 5px;
+    width: 35px;
+    border-radius: 50px;
+    height: 35px;
+    line-height: 2.2;
 }
 .pagination a:hover {
     opacity: .8;
 }
 .pagination a.active {
-    background-color: var(--primary-color);
+    background-color: #333;
     color: #fff;
 }
 
@@ -209,15 +258,13 @@ footer {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    
+    font-size: .9rem;
 }
 footer a {
     color: #999;
     text-decoration: none;
 }
-
 .room-details {
-
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -225,7 +272,6 @@ footer a {
 .room-details h2 {
     font-size: 2.5rem;
 }
-
 .room-details__content {
     display: flex;
     flex-direction: row;
@@ -234,8 +280,13 @@ footer a {
 .room-details img {
     max-width: 50vh;
 }
-.room-details .map {
-    background-color: blue;
+.show-map {
+    padding: 15px;
+
+}
+.show-map:hover {
+    background-color: #eee;
+    border-radius: 15px;
 }
 
 @media(min-width: 600px) {
@@ -250,7 +301,10 @@ footer a {
         padding-top: 3rem;
     }
     h1 a {
-        font-size: 4rem;
+        font-size: 3rem;
+    }
+    .main-content{
+        flex-direction: row;
     }
     .container {
         max-width: 1200px;
@@ -258,16 +312,40 @@ footer a {
         justify-content: center;
         display: flex;
         width: 100%;
+        padding: 30px;
     }
+    .header-results {
+        flex-direction: row;
+    }
+
     .rooms-block {
         display: flex;
         flex-wrap: wrap;
+        flex: 1;
     }
     .room { 
         flex-direction: column;
-        flex: 1 1 30%;
+        flex: 1 1 23%;
         margin: 10px;
         justify-content: flex-start;
+        /* max-width: 245px; */
+    }
+
+    .filter form {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        align-items: flex-end;
+    }
+
+    .showing {
+        flex: 1;
+    }
+    .rooms-with-map .room {
+        flex: 1 1 30%;
+    }
+    .rooms-with-map .room .room__image-block {
+        max-height: auto;
     }
     footer {
         max-width: 1200px;
