@@ -132,12 +132,10 @@ var totalPrice = document.querySelector('.room__total__price');
 
 // Filter by Place 
 function filterByPlace(localValue, totalPriceValue) {
-
     paginationEl.style.display = "none";
     var filtered = allRooms.filter(room => room.place == localValue);
     totalValueEl = filtered.length;
     renderRooms(filtered, totalPriceValue);
-
 }
 
 function calculateDays(e) {
@@ -146,11 +144,8 @@ function calculateDays(e) {
     var localValue = localEl.value;
 
     if (localValue == 0 || checkoutEl.value == 0 || checkoutEl.value == 0 || guests.value == 0) {
-        console.log("local vazio");
         alert("Preencha todos os campos da busca")
-
     } else {
-        console.log(localValue)
 
         totalOfDays = Math.floor((Date.parse(checkoutEl.value) - Date.parse(checkinEl.value)) / 86400000);
         var totalPriceValue = totalOfDays * guests.value;
